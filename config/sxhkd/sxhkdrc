@@ -4,7 +4,7 @@
 
 # Terminal (kitty)
 super + Return
-	kitty
+	alacritty
 
 # Rofi App Launcher
 alt + F1
@@ -30,11 +30,11 @@ super + d
 super + shift + {b,n}
 	{firefox,geany}
 super + e
-	nautilus
+	thunar
 
 # Terminal Apps
 ctrl + alt + {v,n,r,h}
-	kitty -e {vim,nvim,ranger,htop}
+	alacritty -e {vim,nvim,ranger,htop}
 
 # Lockscreen
 ctrl + alt + l
@@ -68,7 +68,7 @@ ctrl + alt + Print
 
 # Brighness control
 XF86MonBrightness{Up,Down}
-	sh $HOME/.local/bin/brightness{ up, down}
+	brightness{ --inc, --dec}
 	
 # Volume control
 XF86Audio{RaiseVolume,LowerVolume}
@@ -170,3 +170,13 @@ super + ctrl + space
 # Cancel the preselection for the focused desktop
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+	
+	
+	
+# Close App
+super + {_,shift + }c
+	bspc node -{c,k}
+
+# Reload Keybindings
+super + Escape
+	pkill -USR1 -x sxhkd

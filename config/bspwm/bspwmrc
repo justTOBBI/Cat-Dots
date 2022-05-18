@@ -17,7 +17,8 @@ xfce4-power-manager &
 picom -b &
 
 ## Background
-feh --bg-fill -r -z $HOME/Pictures/Wallpapers &
+#feh --bg-fill -r -z $HOME/Pictures/Wallpapers/1.jpg &
+feh --bg-fill -r -z $HOME/wallpapers/favs/ &
 
 ## Redshift (Optional)
 # redshift -x && redshift -O 4000k &
