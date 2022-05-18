@@ -96,7 +96,7 @@ esac
 # Copying Files
     clear
     printf "${cb}[*] Getting dotfiles\n" && sleep 2
-    cd $dots && git clone https://github.com/Deathemonic/Cat-Dots.git # Clone the main branch
+    cd $dots && git clone https://github.com/justTOBBI/Cat-Dots # Clone the main branch
     cd $cat
     printf "${cr}[*] Making backups\n" && sleep 5
 # Copying the old configs to backup folder
