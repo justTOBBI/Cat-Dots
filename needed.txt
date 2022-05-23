@@ -1,0 +1,32 @@
+needed software:
+
+    yay:
+        ksuperkey
+        polybar
+        bspwm
+        rofi
+        takeshot
+        firefox
+        alacritty
+        thunar
+        timeshift
+        xfce4-power-management
+        dunst
+
+
+
+
+additional software:
+    yay: 
+        code - oss
+        discord
+        zathura + zathura-pdf-poppler(pdf viewer with style) 
+        bitwarden (password management)
+        spotify (spicetify)
+        anytype (notion alternative)
+        libreoffice (office suite)
+        cava (basic tool for flexing and visualizing music)
+        colorscript (for displaying the panes when the terminal starts)
+
+
+

@@ -76,20 +76,12 @@ case $arch in
     # Paru
         case $helper in
             P*|p*)
-            cd $dots
-            git clone https://aur.archlinux.org/paru.git
-            cd paru
-            makepkg -si
-            paru -S --noconfirm bspwm-git sxhkd-git polybar-git rofi zsh kitty picom-ibhagwan-git dunst gtk3 gtk-engine-murrine gnome-themes-extra alsa alsa-utils feh volumectl brightnessctl bluetoothctl i3lock-color ksuperkey sddm rofi-bluetooth-git yad networkmanager-dmenu-git cava nerd-fonts-jetbrains-mono ttf-jetbrains-mono ttf-iosevka ttf-iosevka-nerd xclip pulseaudio pulseaudio-alsa pulseaudio-bluetooth xbrightness xcolor mpd ncmpcpp mpc zathura polkit-gnome xfce4-power-manager viewnior maim
+            paru -S --noconfirm alacritty bspwm-git sxhkd-git polybar-git rofi zsh fish picom-ibhagwan-git dunst gtk3 gtk-engine-murrine gnome-themes-extra alsa alsa-utils feh volumectl brightnessctl bluetoothctl i3lock-color ksuperkey sddm rofi-bluetooth-git yad networkmanager-dmenu-git cava nerd-fonts-jetbrains-mono ttf-jetbrains-mono ttf-iosevka ttf-iosevka-nerd xclip pulseaudio pulseaudio-alsa pulseaudio-bluetooth xbrightness xcolor mpd ncmpcpp mpc zathura polkit-gnome xfce4-power-manager viewnior maim
         esac
     # Yay
         case $helper in
             Y*|y*) 
-            cd $dots
-            git clone https://aur.archlinux.org/yay.git
-            cd yay
-            makepkg -si
-            yay -S --noconfirm bspwm-git sxhkd-git polybar-git rofi zsh kitty picom-ibhagwan-git dunst gtk3 gtk-engine-murrine gnome-themes-extra alsa alsa-utils feh volumectl brightnessctl bluetoothctl i3lock-color ksuperkey sddm rofi-bluetooth-git yad networkmanager-dmenu-git cava nerd-fonts-jetbrains-mono ttf-jetbrains-mono ttf-iosevka ttf-iosevka-nerd xclip pulseaudio pulseaudio-alsa pulseaudio-bluetooth xbrightness xcolor mpd ncmpcpp mpc zathura polkit-gnome xfce4-power-manager viewnior maim
+            yay -S --noconfirm alacritty bspwm-git sxhkd-git polybar-git rofi zsh fish picom-ibhagwan-git dunst gtk3 gtk-engine-murrine gnome-themes-extra alsa alsa-utils feh volumectl brightnessctl bluetoothctl i3lock-color ksuperkey sddm rofi-bluetooth-git yad networkmanager-dmenu-git cava nerd-fonts-jetbrains-mono ttf-jetbrains-mono ttf-iosevka ttf-iosevka-nerd xclip pulseaudio pulseaudio-alsa pulseaudio-bluetooth xbrightness xcolor mpd ncmpcpp mpc zathura polkit-gnome xfce4-power-manager viewnior maim
         esac
 esac
 
@@ -105,7 +97,7 @@ esac
     cp -rf $config/polybar/ $config/backups
     cp -rf $config/networkmanager-dmenu/ $config/backups
     cp -rf $config/nvim/ $config/backups
-    cp -rf $config/kitty/ $config/backups
+    cp -rf $config/alacritty $config/backups
     cp -rf $config/dunst/ $config/backups
     cp -rf $config/zathura/ $config/backups
     cp -rf $config/cava/ $config/backups
@@ -123,7 +115,7 @@ esac
     rm -rf $config/polybar/
     rm -rf $config/networkmanager-dmenu/
     rm -rf $config/nvim/
-    rm -rf $config/kitty/
+    rm -rf $config/alacritty/
     rm -rf $config/dunst/
     rm -rf $config/zathura/
     rm -rf $config/cava/
@@ -152,8 +144,9 @@ esac
     chmod +x $config/bspwm/bspwmrc
     chmod +x $config/rofi/bin/*
     chmod +x $config/polybar/launch.sh
+    chmox +x $config/polybar/scripts/*
     printf "${cb}[*] Copying wallpapers\n" && sleep 3
-    cp -rf $cat/home/Pictures/Wallpapers/* $HOME/Pictures/Wallpapers
+    cp -rf $cat/home/wallp/* $HOME/wallp
     printf "${cg}[*] Wallpapers copied\n" && sleep 2
     printf "${cb}[*] Copying fonts\n" && sleep 3
     cp -rf $cat/fonts/* $HOME/.fonts
