@@ -1,5 +1,5 @@
 # Catppuccin BSPWM Dotfiles
-
+:warning: The newest Version of my dotfiles was moved to [dotfiles](https://github.com/justTOBBI/dotfiles)
 
 | My | Catppuccin Rice |
 |---|---|
